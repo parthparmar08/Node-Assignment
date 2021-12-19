@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Student</title>
+  </head>
+
+  <body style="font-size: 30px">
+    <h2>Student Records       </h2>
+    <h5 align="right"><a href="/logout">LogOut</a></h5>
+    <hr>
+    <table border="1" style="font-size: 20px">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+
+      <tbody>
+        <%if (details.length > 0){ %> <% details.forEach(function(row){ %>
+        <tr>
+          <td align="center"><%= row.firstname %></td>
+          <td align="center"><%= row.lastname %></td>
+          <td align="center"><%= row.email %></td>
+          <td align="center"><%= row.password %></td>
+          <td align="center"><a href="/edit/<%= row._id %>">Edit</a></td>
+          <td align="center"><a href="/delete/<%= row._id %>">Delete</a></td>
+        </tr>
+        <% }) }%>
+      </tbody>
+    </table>
+    
+  </body>
+</html>
