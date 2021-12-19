@@ -1,0 +1,31 @@
+<style>
+  .outerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .innerDiv {
+    width: 400px;
+    margin: 15px;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+<div class="d-flex align-items-center">
+  <div *ngFor="let item of data">
+    <div class="innerDiv">
+      <img
+        src="../../assets/img.png"
+        class="
+          img-fluid
+          ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}
+        "
+        alt=""
+      />
+      <p>{{ item.title }}</p>
+      <p>{{ item.price }}</p>
+      <p>{{ item.desc }}</p>
+    </div>
+  </div>
+</div>

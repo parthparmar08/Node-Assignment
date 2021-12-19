@@ -1,0 +1,34 @@
+<style>
+  table {
+    margin: 10px;
+  }
+  td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+</style>
+<button routerLink="../../admin/addproduct" class="m-2">Add Product</button>
+<table border="1">
+  <thead>
+    <td>*</td>
+    <td>Title</td>
+    <td>Price</td>
+    <td>Description</td>
+    <td>Action</td>
+    <td>Action</td>
+  </thead>
+  <tbody *ngFor="let item of data; let i = index">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.desc }}</td>
+      <td>
+        <button routerLink="../../admin/editproduct/{{ item._id }}">
+          Edit
+        </button>
+      </td>
+      <td><button (click)="deleteData(item._id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

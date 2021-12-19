@@ -1,0 +1,9 @@
+<form (ngSubmit)="insertData()" [formGroup]="form" class="m-3">
+  <label for="">Title</label><br />
+  <input type="title" formControlName="title" /><br />
+  <label for="">Price</label><br />
+  <input type="number" step="any" formControlName="price" /><br />
+  <label for="">description</label><br />
+  <input type="text" formControlName="desc" /><br />
+  <input type="submit" value="submit" />
+</form>
